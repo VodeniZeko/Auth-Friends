@@ -28,7 +28,7 @@ class Login extends Component {
         //set the token received from server to local storage
         window.localStorage.setItem("token", res.data.payload);
         //send the user to friends page YAY
-        this.props.history.push("/protected");
+        this.props.history.push("./protected");
       })
       .catch(err => {
         console.log(err);
