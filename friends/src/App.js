@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 //
 import { Nav } from "./components/Nav";
 import Login from "./components/Login";
-import { FriendsList } from "./components/FriendsList";
+import FriendsList from "./components/FriendsList";
 function App() {
   return (
     <div>

@@ -22,15 +22,18 @@ class Login extends Component {
   handleLogin = e => {
     e.preventDefault();
     axiosWithAuth()
+      //make a post call and send the credentials
       .post("/api/login", this.state.credentials)
       .then(res => {
+        //set the token received from server to local storage
         window.localStorage.setItem("token", res.data.payload);
+        //send the user to friends page YAY
         this.props.history.push("/protected");
-        console.log(res);
       })
       .catch(err => {
         console.log(err);
       });
+    //reset the form inputs
     this.setState({
       credentials: {
         username: "",
