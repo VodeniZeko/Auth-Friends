@@ -23,12 +23,8 @@ class AddFriend extends Component {
   handleLogin = e => {
     e.preventDefault();
     axiosWithAuth()
-      //make a post call and send the newFriend
       .post("/api/friends", this.state.newFriend)
       .then(res => {
-        //set the token received from server to local storage
-        // window.localStorage.setItem("token", res.data.payload);
-        // //send the user to friends page YAY
         this.props.history.push("./protected");
         window.location.reload();
       })

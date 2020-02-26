@@ -13,11 +13,10 @@ function App() {
     <div>
       <Nav />
       <Switch>
-        <PrivateRoute exact path="/protected" component={FriendsList} />
-        {/* <Route path="empty" component={null} /> */}
         <Route path="/login" component={Login} />
+        <PrivateRoute path="/protected" component={FriendsList} />
+
         <Route path="/addFriend" component={AddFriend} />
-        <Route component={Login} />
       </Switch>
     </div>
   );

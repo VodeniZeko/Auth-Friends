@@ -43,7 +43,7 @@ const Nav = () => {
               to="./addFriend"
               className="f6 link dib green dim mr3 mr4-ns"
             >
-              add friend
+              ADD FRIEND
             </NavLink>
           </>
         ) : null}

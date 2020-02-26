@@ -61,6 +61,8 @@ img {
 .link {
   text-decoration: none;
   transition: color 0.15s ease-in;
+  margin-top: 5px;
+  margin-right: 6px;
 }
 
 .link:link,

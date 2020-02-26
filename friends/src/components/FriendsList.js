@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./FriendsList.css";
+import { NavLink } from "react-router-dom";
 import { axiosWithAuth } from "../util/axiosWithAuth";
 
 class FriendsList extends Component {
@@ -67,12 +68,33 @@ class FriendsList extends Component {
                 </span>{" "}
                 {friend.email}
               </p>
-              <a
-                className="link tc ph3 pv1 db bg-animate bg-dark-blue hover-bg-blue white f6 br1"
-                href="./"
+              <NavLink
+                to="./"
+                style={{ backgroundColor: "green" }}
+                className="link tc ph3 pv1 db f6 br1"
               >
                 Add Friend
-              </a>
+              </NavLink>
+              <NavLink
+                style={{ backgroundColor: "red" }}
+                className="link tc ph3 pv1 db f6 br1"
+                to="./"
+                onClick={() => {
+                  axiosWithAuth()
+                    .delete(`/api/friends/${friend.id}`)
+                    .then(res => {
+                      this.setState({
+                        friends: res
+                      });
+                      this.props.history.push("./protected");
+                    })
+                    .catch(err => {
+                      console.log(err);
+                    });
+                }}
+              >
+                Delete Friend
+              </NavLink>
             </div>
           </article>
         ))}
