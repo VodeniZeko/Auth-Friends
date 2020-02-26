@@ -29,6 +29,7 @@ class Login extends Component {
         window.localStorage.setItem("token", res.data.payload);
         //send the user to friends page YAY
         this.props.history.push("./protected");
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
@@ -41,6 +42,7 @@ class Login extends Component {
       }
     });
   };
+
   render() {
     return (
       <main className="pa4 black-80">
