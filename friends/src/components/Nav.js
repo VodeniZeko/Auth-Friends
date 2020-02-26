@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
-import { axiosWithAuth } from "../util/axiosWithAuth";
 
 const Nav = () => {
   const token = window.localStorage.getItem("token");
@@ -39,6 +38,12 @@ const Nav = () => {
               className="f6 link dib white dim mr3 mr4-ns"
             >
               friends
+            </NavLink>
+            <NavLink
+              to="./addFriend"
+              className="f6 link dib green dim mr3 mr4-ns"
+            >
+              add friend
             </NavLink>
           </>
         ) : null}
